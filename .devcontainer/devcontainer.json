@@ -1,0 +1,20 @@
+{
+  "name": "IONIC project",
+  "context": "..",
+  "dockerFile": "Dockerfile",
+  "appPort": 3000,
+  //"runArgs": ["-u", "node"],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "npm install",
+  "extensions": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "ms-azuretools.vscode-docker",
+    "eg2.vscode-npm-script",
+    "msjsdiag.debugger-for-chrome",
+    "eamodio.gitlens",
+    "mhutchie.git-graph"
+  ]
+}
