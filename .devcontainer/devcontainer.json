@@ -15,6 +15,7 @@
     "eg2.vscode-npm-script",
     "msjsdiag.debugger-for-chrome",
     "eamodio.gitlens",
-    "mhutchie.git-graph"
+    "mhutchie.git-graph",
+    "angular.ng-template"
   ]
 }
