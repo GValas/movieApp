@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { MovieDetails, MovieService } from '../../services/movie.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-movie-details',
@@ -6,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movie-details.page.scss'],
 })
 export class MovieDetailsPage implements OnInit {
-
-  constructor() { }
+  imageBaseUrl = environment.images;
+  movieDetails$: Observable<MovieDetails>;
+  constructor(
+    private route: ActivatedRoute,
+    private movieService: MovieService
+  ) {}
 
   ngOnInit() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.movieDetails$ = this.movieService.getMovieDetails(id);
   }
 
+  openHomePage(url: string) {
+    window.open(url);
+  }
 }

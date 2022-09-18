@@ -1,12 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title>Trending movis</ion-title>
+    <ion-title>Trending movies</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item button *ngFor="let movie of movies$|async">
+    <ion-item button *ngFor="let movie of movies$|async" [routerLink]="[movie.id]">
       <ion-avatar slot="start"><img [src]="imageBaseUrl + '/w92' + movie.poster_path"></ion-avatar>
       <ion-label>
         {{movie.title}}
@@ -16,6 +16,6 @@
     </ion-item>
   </ion-list>
   <ion-infinite-scroll (ionInfinite)="loadMovies($event)">
-    <ion-infinite-scroll-content loadingSpinner="bubles" loadingText="loading"></ion-infinite-scroll-content>
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="loading"></ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
